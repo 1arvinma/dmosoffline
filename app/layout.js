@@ -1,0 +1,7 @@
+/* Reserve the actual tray height, including wrapping and safe-area padding. */
+(()=>{'use strict';let tray,observer,frame;const root=document.documentElement;
+function measure(){if(!tray?.isConnected)return;const narrow=matchMedia('(max-width:600px)').matches,floating=tray.classList.contains('floating');root.style.setProperty('--tray-space',(!floating||narrow?Math.ceil(tray.getBoundingClientRect().height):0)+'px');if(floating&&!narrow&&tray.style.left){const r=tray.getBoundingClientRect();tray.style.left=Math.max(8,Math.min(innerWidth-r.width-8,r.left))+'px';tray.style.top=Math.max(8,Math.min(innerHeight-r.height-8,r.top))+'px'}}
+function schedule(){cancelAnimationFrame(frame);frame=requestAnimationFrame(measure)}
+function bind(){const next=document.querySelector('.dice-tray');if(next===tray)return;observer?.disconnect();tray=next;if(tray&&typeof ResizeObserver!=='undefined'){observer=new ResizeObserver(schedule);observer.observe(tray)}schedule();const active=document.querySelector('.nav [aria-current="page"]'),nav=active?.parentElement;if(active&&nav&&nav.scrollWidth>nav.clientWidth){const left=active.offsetLeft-nav.offsetLeft;if(left<nav.scrollLeft)nav.scrollLeft=left;else if(left+active.offsetWidth>nav.scrollLeft+nav.clientWidth)nav.scrollLeft=left+active.offsetWidth-nav.clientWidth}}
+const app=document.querySelector('#app');if(app)new MutationObserver(bind).observe(app,{childList:true});addEventListener('resize',schedule);window.visualViewport?.addEventListener('resize',schedule);bind();
+})();

@@ -1,0 +1,83 @@
+/* Responsive layout: loaded after the base theme, without changing print output. */
+@media screen {
+ :root{--sidebar-size:218px;--tray-space:110px}
+ html{scroll-padding-bottom:var(--tray-space);-webkit-text-size-adjust:100%}
+ body{min-width:0;overflow-wrap:anywhere}
+ .shell{grid-template-columns:var(--sidebar-size) minmax(0,1fr)}
+ .sidebar{height:100vh;height:100dvh;overflow-y:auto;overscroll-behavior:contain}
+ .workspace,.content,.grid>*,.form-grid>*,.row>*,.pc-head>*,.history-roll>*,.dialog-head>*,.topbar>div{min-width:0}
+ .content{width:100%;padding:clamp(18px,2.5vw,36px);padding-bottom:calc(var(--tray-space) + 24px)}
+ .cols2{grid-template-columns:repeat(2,minmax(0,1fr))}.cols3{grid-template-columns:repeat(3,minmax(0,1fr))}.cols4{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .party-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+ .topbar{flex-wrap:wrap;gap:12px;padding:16px clamp(18px,2.5vw,34px)}
+ .topbar>.row:first-child{flex:1 1 260px;flex-wrap:nowrap}
+ #campaign-select{width:100%;min-width:0;max-width:340px;text-overflow:ellipsis}
+ .topbar-right{flex:1 1 250px;min-width:0;justify-content:flex-end}
+ .mode-control{min-width:0}.topbar .mode-control select{min-width:0;max-width:100%}
+ .page-head{flex-wrap:wrap;align-items:flex-start}.page-head>div:first-child{flex:1 1 260px}
+ .page-head>.row{flex:1 1 280px;max-width:none;justify-content:flex-end}
+ .row button,.toolbar button,.form-actions button{white-space:normal;overflow-wrap:anywhere}
+ button,.button-link,summary{touch-action:manipulation}
+ input,select,textarea{min-width:0;max-width:100%}select{text-overflow:ellipsis}
+ input[type=checkbox],input[type=radio]{width:auto;flex:0 0 auto;accent-color:var(--accent)}
+ .badge,.chip{white-space:normal;overflow-wrap:anywhere;max-width:100%}
+ .history-roll{flex-wrap:wrap;align-items:flex-start}.history-roll>span:first-child{flex:1 1 150px}
+ .combat-row{grid-template-columns:42px minmax(0,1fr)}.combat-row>.row{grid-column:2;justify-content:flex-start}
+ .encounter-layout{grid-template-columns:minmax(0,2fr) minmax(220px,1fr)}
+ .book-search{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) auto}
+ .table-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+ .help-table{table-layout:auto}.help-table td,.help-table th{overflow-wrap:anywhere}
+ .book-page{max-width:100%;max-height:50vh;max-height:50dvh;overflow:auto}
+ .source-illustration{max-width:100%;margin-inline:0}.source-illustration img{max-width:100%;object-fit:contain}
+ .command-log{height:clamp(210px,46vh,480px)}.command-form{flex-wrap:wrap}.command-form input{flex:1 1 180px}
+ .dice-tray{left:var(--sidebar-size);padding:10px 18px calc(10px + env(safe-area-inset-bottom));flex-wrap:wrap;gap:8px}
+ .dice-tray form{min-width:0;flex:1 1 220px;max-width:none}.dice-tray form input{flex:1 1 0;width:0;min-width:0}
+ .dice-result{flex:1 1 150px;min-width:0;max-width:100%;text-align:right}
+ .dice-tray.floating{max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);overflow-y:auto;width:min(440px,calc(100vw - 24px))}
+ dialog{width:min(740px,calc(100vw - 24px));max-width:calc(100vw - 24px);max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);padding:20px;margin:auto;overscroll-behavior:contain}
+ dialog[open]{display:flex;flex-direction:column;overflow:hidden}
+ .dialog-head{gap:12px;flex:0 0 auto;margin-bottom:14px}.dialog-head h2{font-size:clamp(19px,3vw,23px);overflow-wrap:anywhere}.dialog-head button{flex:0 0 auto;min-width:44px;min-height:44px}
+ #modal-form{display:flex;flex-direction:column;min-height:0;min-width:0;overflow:hidden}
+ #modal-form>.form-grid{overflow:auto;min-height:0;min-width:0;padding:4px;overscroll-behavior:contain;scrollbar-gutter:stable}
+ .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .form-actions{flex:0 0 auto;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+ #toast{max-width:calc(100vw - 24px);right:12px;top:calc(12px + env(safe-area-inset-top));overflow-wrap:anywhere}
+ :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+ @media(max-width:1150px){.cols3,.cols4{grid-template-columns:repeat(2,minmax(0,1fr))}.encounter-layout{grid-template-columns:minmax(0,1fr)}.book-search{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.book-search>button{grid-column:1/-1}.dice-tray .quick-die{display:none}}
+ @media(max-width:900px){
+  :root{--sidebar-size:0px}
+  .shell{grid-template-columns:minmax(0,1fr)}
+  .sidebar{position:sticky;top:0;z-index:15;height:auto;max-width:100%;padding:10px 14px;gap:8px;border-right:0;border-bottom:1px solid var(--line);overflow:visible}
+  .brand{display:flex;align-items:baseline;gap:12px;padding:0 4px;font-size:19px}.brand small{margin:0;font-size:9px;letter-spacing:1px}
+  .side-label,.side-bottom,.nav .icon{display:none}.sidebar>div:nth-child(2){min-width:0}
+  .nav{display:flex;max-width:100%;gap:6px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;padding:2px 1px 5px;scroll-padding-inline:8px}
+  .nav button{flex:0 0 auto;min-height:44px;white-space:nowrap;padding:9px 12px}
+  .content{padding:22px 18px calc(var(--tray-space) + 24px)}
+  .cols2{grid-template-columns:repeat(2,minmax(0,1fr))}.party-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+  .dice-tray{left:0}.topbar .mode-control select{font-size:16px}
+  button,button.small,.button-link,summary{min-height:44px}.button-link{display:inline-flex;align-items:center}
+  input,select,textarea{font-size:16px;min-height:44px}input[type=checkbox],input[type=radio]{min-height:auto;width:20px;height:20px;vertical-align:middle}
+ }
+ @media(max-width:600px){
+  .content{padding:18px 12px calc(var(--tray-space) + 20px)}.panel{padding:16px}.grid{gap:12px}
+  .cols2,.cols3,.cols4,.party-grid,.form-grid,.book-search{grid-template-columns:minmax(0,1fr)}
+  .topbar{padding:12px;gap:10px}.topbar>.row:first-child{flex-basis:100%}.topbar-right{flex-basis:100%;justify-content:space-between}.topbar-right small{display:none}
+  #campaign-select{max-width:none}.topbar>.row>button{flex:0 0 auto}.mode-control{width:100%;justify-content:space-between}.mode-control select{flex:1;width:0}
+  .page-head{flex-direction:column;gap:12px;margin-bottom:18px}.page-head>div:first-child,.page-head>.row{flex:auto;width:100%;justify-content:flex-start}.page-head h1{font-size:clamp(24px,7vw,30px)}
+  .page-head>.row button{flex:1 1 130px}.mode-panel>.row{align-items:flex-start}.mode-panel .row .row{width:100%}.mode-panel .row .row button{flex:1 1 78px}
+  .pc-head{flex-wrap:wrap}.pc-head>div:first-child{flex:1 1 150px}.pc-head>.hp{flex:0 0 auto}.abilities{gap:5px}
+  .combat-row{grid-template-columns:32px minmax(0,1fr);gap:10px}.combat-row>.row{gap:6px}.combat-row>.row button{flex:1 1 58px}
+  .toolbar button{flex:1 1 120px}.reader-tools{gap:8px}.reader-tools .button-link{flex-basis:100%}
+  .dice-tray,.dice-tray.floating{left:0!important;right:0!important;top:auto!important;bottom:0!important;width:auto;max-width:100%;max-height:40vh;max-height:40dvh;border-radius:0;padding:8px 12px calc(8px + env(safe-area-inset-bottom));overflow:auto}
+  .dice-tray .quick-die,.dice-tray.floating .quick-die,.dice-handle,.floating .dice-handle{display:none!important}
+  .dice-tray form,.dice-tray.floating form{order:0;flex:1 1 170px;max-width:none}.dice-tray>button.small{order:1;min-width:55px}.dice-result,.dice-tray.floating .dice-result{order:2;flex-basis:100%;font-size:13px;line-height:1.4}
+  dialog{padding:14px;width:calc(100vw - 16px);max-width:calc(100vw - 16px);max-height:calc(100vh - 16px);max-height:calc(100dvh - 16px);border-radius:12px}
+  .dialog-head{margin-bottom:8px}.form-actions{gap:8px;margin-top:10px;padding-top:10px}.form-actions button{flex:1 1 100px}
+  .book-page{padding:12px;font-size:14px}.help-table td,.help-table th{padding:8px}.history-roll{gap:8px}
+ }
+ @media(max-height:500px) and (max-width:900px){.sidebar{position:static}.brand{display:none}.dice-result{flex-basis:auto}.dice-tray{padding-top:5px}.dialog-head{margin-bottom:4px}.form-actions{margin-top:6px;padding-top:6px}}
+ @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+}
+
+/* Touch-first dice controls, also usable with keyboard. */
+.touch-tray{display:block;max-height:45dvh;overflow:auto}.touch-tray .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.touch-tray button{min-height:44px;min-width:44px}.touch-tray .dice-result{white-space:normal;overflow-wrap:anywhere;flex:1;min-width:110px}.touch-dice{padding-top:10px;display:grid;gap:10px}.touch-tray #dice-form{display:flex;gap:8px;margin-top:10px}.touch-tray input{min-width:0;width:100%}.touch-tray summary{padding:10px}.touch-tray .tap-die{font-size:18px;flex:1}@media(max-width:600px){.touch-tray{left:0;right:0;bottom:0;width:100%;border-radius:12px 12px 0 0;padding:10px}.touch-tray .dice-result{font-size:15px}.touch-tray .tap-die{flex:0 0 calc(25% - 8px)}}

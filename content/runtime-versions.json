@@ -1,0 +1,12 @@
+{
+  "electron": {
+    "version": "45.0.0",
+    "url": "https://github.com/electron/electron/releases/download/v45.0.0/electron-v45.0.0-win32-x64.zip",
+    "sha256": "ae53887a23bb640369c93dbd38c408a2af5c0deb86f2fa76c6c244cb444b7f47"
+  },
+  "pdfjs": {
+    "version": "6.4.299",
+    "url": "https://github.com/mozilla/pdf.js/releases/download/v6.4.299/pdfjs-6.4.299-legacy-dist.zip",
+    "sha256": "c894bce53b2f4c3e13141e088c89cc051a1f7118ba4a2c02ec058798ae1303d1"
+  }
+}
