@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "campaigns": [
+    {
+      "id": "campaign-example-one",
+      "name": "Upgrade example",
+      "mode": "Oracle",
+      "session": 4,
+      "premise": "A fictional fixture created only for upgrade tests.",
+      "party": [
+        {
+          "id": "pc-example-one",
+          "name": "Example Hero",
+          "race": "Mole-kins",
+          "raceSource": "EF Alpha Races",
+          "className": "Druid",
+          "subclass": "Circle of the Land",
+          "level": 3,
+          "classLevels": "Druid 3",
+          "subclassSelections": "Druid=Circle of the Land",
+          "hp": 17,
+          "maxHp": 26,
+          "tempHp": 3,
+          "ac": 14,
+          "xp": 1200,
+          "abilities": {
+            "str": 12,
+            "dex": 14,
+            "con": 16,
+            "int": 10,
+            "wis": 17,
+            "cha": 8
+          },
+          "speed": "30 ft",
+          "darkvision": "60 ft",
+          "conditions": [
+            "Poisoned"
+          ],
+          "slots": "Level 1: 2/4",
+          "notes": "Synthetic character notes",
+          "dmTraitNotes": "Synthetic manual DM notes",
+          "reviewedTraits": [
+            "race:Mole-kins:Mole-kin Toughness"
+          ],
+          "traitHistory": [
+            {
+              "from": 2,
+              "to": 3,
+              "time": "2025-01-01T00:00:00Z",
+              "gained": [
+                "Example feature"
+              ]
+            }
+          ],
+          "legacy": {
+            "custom": "Synthetic original record"
+          },
+          "dmTraitsSnapshot": {
+            "version": 1,
+            "level": 3,
+            "mode": "Oracle",
+            "text": "Synthetic cached traits",
+            "updated": "2025-01-01T00:00:00Z"
+          }
+        }
+      ],
+      "combat": {
+        "actors": [
+          {
+            "id": "actor-example-one",
+            "pcId": "pc-example-one",
+            "name": "Example Hero",
+            "initiative": 15,
+            "maxHp": 26,
+            "hp": 17,
+            "ac": 14,
+            "side": "party",
+            "conditions": [
+              "Poisoned"
+            ]
+          },
+          {
+            "id": "actor-example-two",
+            "pcId": null,
+            "name": "Example Opponent",
+            "initiative": 12,
+            "maxHp": 12,
+            "hp": 8,
+            "ac": 12,
+            "side": "enemy",
+            "conditions": []
+          }
+        ],
+        "round": 3,
+        "activeId": "actor-example-two",
+        "started": true
+      },
+      "notes": [
+        {
+          "id": "note-example-one",
+          "title": "Fictional session",
+          "body": "Synthetic journal body",
+          "tag": "LOG",
+          "time": "2025-01-01T00:00:00Z",
+          "session": 4
+        }
+      ],
+      "todos": [
+        {
+          "id": "todo-example-one",
+          "text": "Synthetic unfinished hook",
+          "done": false
+        }
+      ],
+      "library": [
+        {
+          "id": "library-example-one",
+          "title": "Example item",
+          "type": "Custom",
+          "body": "Synthetic library text",
+          "source": "Custom",
+          "mode": "Oracle",
+          "time": "2025-01-01T00:00:00Z"
+        }
+      ],
+      "rolls": [
+        {
+          "id": "roll-example-one",
+          "expression": "2d6+1",
+          "total": 9,
+          "parts": [
+            {
+              "label": "2d6",
+              "values": [
+                6,
+                2
+              ],
+              "kept": [
+                0,
+                1
+              ],
+              "subtotal": 8
+            },
+            {
+              "label": "+1",
+              "subtotal": 1
+            }
+          ],
+          "time": "2025-01-01T00:00:00Z"
+        }
+      ],
+      "messages": [],
+      "created": "2025-01-01T00:00:00.000Z",
+      "sourceIds": [
+        "book-srd-51",
+        "book-oracle-alpha"
+      ],
+      "catalogRevision": 3
+    },
+    {
+      "id": "campaign-example-two",
+      "name": "Second example",
+      "mode": "Archivist",
+      "session": 1,
+      "premise": "",
+      "party": [],
+      "combat": {
+        "round": 1,
+        "activeId": null,
+        "started": false,
+        "actors": []
+      },
+      "notes": [],
+      "todos": [],
+      "library": [],
+      "rolls": [],
+      "messages": [],
+      "created": "2025-01-01T00:00:00.000Z"
+    }
+  ],
+  "activeId": "campaign-example-two",
+  "settings": {
+    "hotkeys": false,
+    "diceFloating": true,
+    "diceExpanded": true,
+    "diceCount": 3,
+    "diceMod": -2,
+    "customPreference": {
+      "compact": true
+    }
+  }
+}

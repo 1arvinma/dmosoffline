@@ -1,4 +1,4 @@
-# DMOS Offline 1.2.0 — open source
+# DMOS Offline 1.2.1 — open source
 
 Offline campaign management for Windows, Android and the browser. Party sheets, legacy imports, player forms with unique score assignment, combat, journals, generators, touch dice, sheet export/share and native media commands. No Ollama, cloud AI, account or runtime server required by the packaged apps.
 
@@ -49,3 +49,7 @@ The private Windows/Android builds already exist. Public release was blocked by 
 Google Play separately needs a verified developer account, testing, listing declarations and review. GitHub release does not complete those steps. Physical Android and external-music-player testing remain necessary.
 
 References: [official SRD](https://www.dndbeyond.com/srd), [Fan Content Policy](https://company.wizards.com/en/legal/fancontentpolicy).
+
+## Upgrades
+
+Use **Updates & recovery** for full workspace backups, the release link and protected pre-upgrade recovery copies. Install the new Windows installer/APK over the existing edition; do not uninstall Android first. Settings and stable record IDs now survive reloads and full backup restores. Future-version saves are protected. See [UPGRADING.md](docs/UPGRADING.md). There is no automatic network updater. Version/build metadata is maintained in `release.json`.

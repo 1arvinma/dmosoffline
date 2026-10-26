@@ -9,6 +9,7 @@ $android=Join-Path $SdkRoot 'platforms/android-36/android.jar'
 $java=Join-Path $JavaHome 'bin'
 New-Item -ItemType Directory -Force "$build/classes","$build/dex" | Out-Null
 node "$PSScriptRoot/assemble.cjs"
+$version=(Get-Content (Join-Path $root "release.json") -Raw | ConvertFrom-Json).version
 & "$java/javac.exe" -encoding UTF-8 -source 8 -target 8 -bootclasspath "$android;$tools/core-lambda-stubs.jar" -d "$build/classes" "$source/MainActivity.java" "$source/SheetProvider.java"
 if($LASTEXITCODE){throw 'Java compilation failed'}
 Compress-Archive -Path "$build/classes/*" -DestinationPath "$build/classes.zip" -Force
@@ -22,17 +23,17 @@ python "$PSScriptRoot/repack-android.py" $build "$root/app"
 if($LASTEXITCODE){throw 'APK packing failed'}
 & "$tools/zipalign.exe" -f -P 16 4 "$build/repacked.apk" "$build/aligned.apk"
 if($LASTEXITCODE){throw 'APK alignment failed'}
-& "$java/java.exe" -cp "$tools/lib/apksigner.jar" com.android.apksigner.ApkSignerTool sign --ks $Keystore --ks-key-alias $Alias --ks-pass "env:$PasswordEnvironmentVariable" --key-pass "env:$PasswordEnvironmentVariable" --v4-signing-enabled false --out "$out/DMOS-OpenSource-1.2.0.apk" "$build/aligned.apk"
+& "$java/java.exe" -cp "$tools/lib/apksigner.jar" com.android.apksigner.ApkSignerTool sign --ks $Keystore --ks-key-alias $Alias --ks-pass "env:$PasswordEnvironmentVariable" --key-pass "env:$PasswordEnvironmentVariable" --v4-signing-enabled false --out "$out/DMOS-OpenSource-$version.apk" "$build/aligned.apk"
 if($LASTEXITCODE){throw 'APK signing failed'}
-& "$java/java.exe" -cp "$tools/lib/apksigner.jar" com.android.apksigner.ApkSignerTool verify --verbose "$out/DMOS-OpenSource-1.2.0.apk"
+& "$java/java.exe" -cp "$tools/lib/apksigner.jar" com.android.apksigner.ApkSignerTool verify --verbose "$out/DMOS-OpenSource-$version.apk"
 if($LASTEXITCODE){throw 'APK verification failed'}
 if($Bundletool){
  & "$tools/aapt2.exe" link --proto-format -o "$build/proto.apk" -I $android --manifest "$source/AndroidManifest.xml" --min-sdk-version 26 --target-sdk-version 36 "$build/resources.zip"
  python "$PSScriptRoot/bundle-android.py" $build "$root/app"
- & "$java/java.exe" "-Djava.io.tmpdir=$build" -jar $Bundletool build-bundle --modules="$build/module.zip" --output="$out/DMOS-OpenSource-1.2.0.aab" --overwrite
+ & "$java/java.exe" "-Djava.io.tmpdir=$build" -jar $Bundletool build-bundle --modules="$build/module.zip" --output="$out/DMOS-OpenSource-$version.aab" --overwrite
  if($LASTEXITCODE){throw 'Bundle build failed'}
- & "$java/jarsigner.exe" -keystore $Keystore -storepass:env $PasswordEnvironmentVariable -keypass:env $PasswordEnvironmentVariable "$out/DMOS-OpenSource-1.2.0.aab" $Alias
+ & "$java/jarsigner.exe" -keystore $Keystore -storepass:env $PasswordEnvironmentVariable -keypass:env $PasswordEnvironmentVariable "$out/DMOS-OpenSource-$version.aab" $Alias
  if($LASTEXITCODE){throw 'Bundle signing failed'}
- & "$java/java.exe" -jar $Bundletool validate --bundle="$out/DMOS-OpenSource-1.2.0.aab"
+ & "$java/java.exe" -jar $Bundletool validate --bundle="$out/DMOS-OpenSource-$version.aab"
  if($LASTEXITCODE){throw 'Bundle verification failed'}
 }

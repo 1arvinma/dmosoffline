@@ -81,3 +81,5 @@
 
 /* Touch-first dice controls, also usable with keyboard. */
 .touch-tray{display:block;max-height:45dvh;overflow:auto}.touch-tray .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.touch-tray button{min-height:44px;min-width:44px}.touch-tray .dice-result{white-space:normal;overflow-wrap:anywhere;flex:1;min-width:110px}.touch-dice{padding-top:10px;display:grid;gap:10px}.touch-tray #dice-form{display:flex;gap:8px;margin-top:10px}.touch-tray input{min-width:0;width:100%}.touch-tray summary{padding:10px}.touch-tray .tap-die{font-size:18px;flex:1}@media(max-width:600px){.touch-tray{left:0;right:0;bottom:0;width:100%;border-radius:12px 12px 0 0;padding:10px}.touch-tray .dice-result{font-size:15px}.touch-tray .tap-die{flex:0 0 calc(25% - 8px)}}
+
+.editor-lock{border:0;padding:0;margin:0;min-width:0}.editor-lock:disabled{opacity:.65}.warning ol,.panel ol{padding-left:24px}.panel li{margin:8px 0}
