@@ -1,10 +1,14 @@
-# DMOS Offline 1.2.1 — open source
+# DMOS Offline 1.3.0 — open source
 
 Offline campaign management for Windows, Android and the browser. Party sheets, legacy imports, player forms with unique score assignment, combat, journals, generators, touch dice, sheet export/share and native media commands. No Ollama, cloud AI, account or runtime server required by the packaged apps.
 
 **EF Alpha Races is original work in progress by Quest LLC / quest.rasht. Artwork by Mopodraws.** EF content/artwork: CC BY 4.0, as authorized by the project owner. Preserve both credits and indicate adaptations. See ATTRIBUTION.md and content/EF-LICENSE.md.
 
 Application code remains under this repository's existing Unlicense. SRD 5.1 and SRD 5.2.1 are separately licensed CC BY 4.0. PDF.js/Electron retain their own licenses and dependency notices. No commercial rulebook PDFs, extracted commercial-book text/images, personal campaigns, device paths, personal support contacts, signing keys or passwords are published.
+
+## Offline content upgrades
+
+Use Books & rules → Add PDF books for your own PDFs, or Content packs to import or update a ZIP, or bind a reference-only pack to player-owned PDFs. Packs persist separately from campaigns through in-place app upgrades. Windows can export player ZIPs from built-in sources. See [the pack guide](docs/CONTENT-PACKS.md). The public release includes a licensed Quest/SRD pack; commercial-book references contain metadata only, never the books.
 
 ## Run
 

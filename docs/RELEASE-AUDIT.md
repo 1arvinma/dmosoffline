@@ -19,3 +19,7 @@ Windows x64 installer and Android APK/AAB are built from this clean source tree.
 Physical Android installation, native printing/share-provider acceptance and external music-player compatibility still need device tests. The open rules PDFs are references; automatic commercial-book class progression has not been relicensed. Class feature notes remain manually reviewed; Oracle uses EF alpha reminders. No claim that every possible bug is fixed, every device is supported, or a store has approved the release.
 
 The audit covers this repository's current tree, its one reachable pre-existing commit and listed prealpha asset, plus the new selected release files. It is not an account-wide guarantee about unrelated repositories, forks or caches. A GitHub username/repository URL and the requested Quest/Mopodraws credits are intentional public identifiers.
+
+## Later privacy correction
+
+The original full-string scan missed reconstructable personal-marker fragments in the scanner itself. The 1.3.0 scanner now loads private values from an external unpublished configuration. Do not interpret the original scan as a guarantee of historical privacy; see CONTENT-PACK-RELEASE-AUDIT.md for the corrected scope.
