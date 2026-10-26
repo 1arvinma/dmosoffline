@@ -19,6 +19,8 @@ UninstallDisplayIcon={app}\DMOS.exe
 CloseApplications=yes
 RestartApplications=no
 UsePreviousAppDir=yes
+DisableDirPage=yes
+SetupMutex=DMOSTableSetup
 UsePreviousTasks=yes
 UsePreviousGroup=yes
 [Files]

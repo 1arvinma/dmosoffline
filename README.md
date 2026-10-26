@@ -1,4 +1,4 @@
-# DMOS Offline 1.3.0 — open source
+# DMOS Offline 1.4.0 — open source
 
 Offline campaign management for Windows, Android and the browser. Party sheets, legacy imports, player forms with unique score assignment, combat, journals, generators, touch dice, sheet export/share and native media commands. No Ollama, cloud AI, account or runtime server required by the packaged apps.
 
@@ -12,7 +12,7 @@ Use Books & rules → Add PDF books for your own PDFs, or Content packs to impor
 
 ## Run
 
-The full release source ZIP includes ready-to-open `app/DMOS.html`, licensed PDFs and the local PDF viewer. Open that file for browser use; native features require a native package. Export backups before changing browser/origin.
+Download the Windows installer or Android APK from Releases. Both include the offline app files and licensed references. GitHub source-code archives are for development and need the preparation steps below. Export backups before upgrading or changing browser/origin.
 
 Git checkouts omit generated indexes and binary dependencies. Prepare them with Node 22+, Python 3.11+ and PowerShell:
 
@@ -57,3 +57,13 @@ References: [official SRD](https://www.dndbeyond.com/srd), [Fan Content Policy](
 ## Upgrades
 
 Use **Updates & recovery** for full workspace backups, the release link and protected pre-upgrade recovery copies. Install the new Windows installer/APK over the existing edition; do not uninstall Android first. Settings and stable record IDs now survive reloads and full backup restores. Future-version saves are protected. See [UPGRADING.md](docs/UPGRADING.md). There is no automatic network updater. Version/build metadata is maintained in `release.json`.
+
+## Session Board and file drops
+
+Prepare, Ready, and Played scenes are saved per campaign. Run a scene to open GM notes and linked encounters; move it to Played manually. Use drag and drop or Move to / arrow controls. Phones show one selectable column with counts. See [Session Board](docs/SESSION-BOARD.md).
+
+Drop PDFs or a DMOS content ZIP anywhere. Drop player/party JSON on Party, and campaign/workspace JSON on Overview or Settings. Imports are previewed before changes. Ordinary ZIP archives must be extracted first; DMOS content ZIPs use the documented content-pack format. Native music controls send commands to the device music app. Android also offers a device volume slider.
+
+## Updating an installed app
+
+Export a full workspace backup, close DMOS Table, then run the new Windows installer. It reuses the registered installation directory and shortcuts, retains the DMOS Table data profile, and blocks downgrades. There is no need to uninstall. On Android, install the newer APK over DMOS Table; do not uninstall or clear storage. Package name and signing certificate stay the same. The older DMOS Local private edition has separate storage; move campaigns with exports instead of uninstalling it first.
