@@ -1,4 +1,4 @@
-# DMOS Offline 1.4.0 — open source
+# DMOS Offline 1.4.1 — open source
 
 Offline campaign management for Windows, Android and the browser. Party sheets, legacy imports, player forms with unique score assignment, combat, journals, generators, touch dice, sheet export/share and native media commands. No Ollama, cloud AI, account or runtime server required by the packaged apps.
 

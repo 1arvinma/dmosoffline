@@ -1,1 +1,1 @@
-#define DMOSVersion "1.4.0"
+#define DMOSVersion "1.4.1"

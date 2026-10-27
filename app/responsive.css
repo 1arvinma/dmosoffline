@@ -83,3 +83,15 @@
 .touch-tray{display:block;max-height:45dvh;overflow:auto}.touch-tray .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.touch-tray button{min-height:44px;min-width:44px}.touch-tray .dice-result{white-space:normal;overflow-wrap:anywhere;flex:1;min-width:110px}.touch-dice{padding-top:10px;display:grid;gap:10px}.touch-tray #dice-form{display:flex;gap:8px;margin-top:10px}.touch-tray input{min-width:0;width:100%}.touch-tray summary{padding:10px}.touch-tray .tap-die{font-size:18px;flex:1}@media(max-width:600px){.touch-tray{left:0;right:0;bottom:0;width:100%;border-radius:12px 12px 0 0;padding:10px}.touch-tray .dice-result{font-size:15px}.touch-tray .tap-die{flex:0 0 calc(25% - 8px)}}
 
 .editor-lock{border:0;padding:0;margin:0;min-width:0}.editor-lock:disabled{opacity:.65}.warning ol,.panel ol{padding-left:24px}.panel li{margin:8px 0}
+
+/* Content-pack lists scroll independently of the persistent action buttons. */
+.pack-dialog>h2{flex:0 0 auto;overflow-wrap:anywhere}
+.pack-dialog .pack-dialog-body{flex:1 1 auto;min-height:0;min-width:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-gutter:stable;padding:4px;-webkit-overflow-scrolling:touch;overflow-wrap:anywhere}
+.pack-dialog-form{display:flex;flex:1 1 auto;flex-direction:column;min-height:0;min-width:0;overflow:hidden}
+.pack-dialog>.form-actions,.pack-dialog-form>.form-actions{flex:0 0 auto;margin-top:0;background:var(--panel)}
+.pack-dialog .pdf-bindings label{margin-bottom:12px}
+.pack-dialog .pdf-bindings select{min-width:0;max-width:100%}
+.pack-dialog input[type=checkbox]{width:auto}
+
+.pack-dialog>[role=status],.pack-dialog-form>[role=status]{flex:0 0 auto;max-height:22vh;overflow:auto;overflow-wrap:anywhere;margin:8px 0}
+.pack-dialog [role=status]:empty{display:none}
